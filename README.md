@@ -39,6 +39,8 @@ Copy
     
 -   [OPTIONAL] `-o <output_file>`: Specifies the output file. If not provided, the tool will automatically generate an output filename based on the input file.
 
+![Actual demonstration of the tool via gif](https://s6.gifyu.com/images/bMwBo.gif)
+
 ## How It Works
 
 1.  **Password Hashing**: The password provided by the user is hashed using the SHA-256 algorithm. This hash is used as the encryption key.
