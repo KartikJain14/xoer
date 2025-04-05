@@ -2,7 +2,6 @@
 # XOER
 
 This is a Command-Line Interface (CLI) tool for encrypting and decrypting files using XOR encryption combined with SHA-256 hashing. It uses a password that is hashed using SHA-256, which is then used to XOR the contents of the file. The tool offers simple operations for file encryption and decryption, ensuring the integrity of the file with a hash and offering user-friendly handling of file names.
-### Visit and use the live demo at [https://vox.preztyl.tech/](https://vox.preztyl.tech/) 
 
 ## Features
 
@@ -43,6 +42,8 @@ more-secure-secret.txt
 -   [REQUIRED] `-i <input_file>`: Specifies the input file to encrypt or decrypt.
     
 -   [OPTIONAL] `-o <output_file>`: Specifies the output file. If not provided, the tool will automatically generate an output filename based on the input file.
+
+![Actual demonstration of the tool via gif](https://s6.gifyu.com/images/bMwBo.gif)
 
 ## How It Works
 
