@@ -120,10 +120,8 @@ int main(int argc, char *argv[]) {
             help();
         } else if ((arg == "-i" || arg == "--input") && argc > i+1) {
             input_file = argv[++i];
-            break;
         } else if ((arg == "-o" || arg == "--output") && argc > i+1) {
             output_file = argv[++i];
-            break;
         }
     }
 
