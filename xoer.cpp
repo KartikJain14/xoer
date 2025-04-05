@@ -95,26 +95,35 @@ void decrypt(const string &input_file, const string &output_file, const vector<u
     cout << "Decryption successful: " << output_file << endl;
 }
 
+// Display help message and terminate the program
+void help() {
+    cerr << "Usage: \n"
+         << "  encrypt -i <input_file> -o [output_file]\n"
+         << "  decrypt -i <input_file> -o [output_file]\n";
+    exit(1);
+}
+
 // https://www.youtube.com/watch?v=fyRMUnhvjqM definitely helped me
 
 // Main function: Handles command-line arguments and runs encryption/decryption
 int main(int argc, char *argv[]) {
     string input_file, output_file, password;
 
-    if (argc < 3) {
-        cerr << "Usage: \n"
-             << "  encrypt -i <input_file> -o <output_file>\n"
-             << "  decrypt -i <input_file> -o <output_file>\n";
-        return 1;
+    if (argc < 3 || argc > 7) {
+        help();
     }
 
     // Check what is the input and output file passed by the cli user
     for (int i = 1; i < argc; i++) {
         string arg = argv[i];
-        if (arg == "-i" && argc > i+1) {
+        if(arg == "-h" || arg == "--help") {
+            help();
+        } else if ((arg == "-i" || arg == "--input") && argc > i+1) {
             input_file = argv[++i];
-        } else if (arg == "-o" && argc > i+1) {
+            break;
+        } else if ((arg == "-o" || arg == "--output") && argc > i+1) {
             output_file = argv[++i];
+            break;
         }
     }
 
@@ -124,10 +133,16 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    if(argv[1] != string("encrypt") && argv[1] != string("decrypt")) {
+        cerr << "Error: Invalid operation. Use 'encrypt' or 'decrypt'.\n";  // Why would someone try anything else?
+        cerr << "To check the usage, try ./xoer"; // Yet to name ths project
+        return 1;
+    }
+
     // Shift to taking password from the user instead of command line arguments to prevent password leaks in the terminal history
     // I could implement the secure password input that would hide the password but that would require a lots of library installations and copy pasting
     // The password is still visible to users since output is stored
-    cout << "Enter password: [The password will be visible in terminal command history. To prevent this]\n";
+    cout << "Enter password: [The password will be visible in terminal command history]\n";
     getline(cin, password);
 
     if (password.empty()) {
@@ -165,13 +180,10 @@ int main(int argc, char *argv[]) {
     // Perform encryption or decryption
     if (argv[1] == string("decrypt")) {
         decrypt(input_file, output_file, key);  // Decrypt
-    } else if (argv[1] == string("encrypt")) {
-        encrypt(input_file, output_file, key);  // Encrypt
     } else {
-        cerr << "Error: Invalid operation. Use 'encrypt' or 'decrypt'.\n";  // Why would someone try anything else?
-        cerr << "To check the usage, try ./<cli-package>"; // Yet to name ths project
-        return 1;
+        encrypt(input_file, output_file, key);  // Encrypt
     }
+
     // Should've added the -h flag to show the help menu (maybe do it later)
     return 0;
 }

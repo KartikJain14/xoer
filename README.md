@@ -18,21 +18,25 @@ This is a Command-Line Interface (CLI) tool for encrypting and decrypting files 
 
 ## Usage
 
+
+To see the help message please type:
+
+
+`λ .\xoer -h` 
+
 ### Encrypt a file:
 
 secret.txt
 
-Copy
 
-`$ .\xoer encrypt -i secret.txt -o more-secure-secret.txt` 
+`λ .\xoer encrypt -i secret.txt -o more-secure-secret.txt` 
 
 ### Decrypt a file:
 
 more-secure-secret.txt
 
-Copy
 
-`$ .\xoer decrypt -i more-secure-secret.txt -o secret.txt` 
+`λ .\xoer decrypt -i more-secure-secret.txt -o secret.txt` 
 
 ### Arguments:
 
@@ -55,11 +59,11 @@ Copy
 ## BYOB (Build Your Own Binary)
 
 Get the xoer code on your local machine:
-`$  git clone https://github.com/kartikjain14/xoer.git && cd xoer`
+`λ git clone https://github.com/kartikjain14/xoer.git && cd xoer`
 
 To compile the tool, you can use the following command:
 
-`$ g++ .\xoer.cpp xoer -lssl -lcrypto`
+`λ g++ .\xoer.cpp xoer -lssl -lcrypto`
 
 ## Security Note
 
