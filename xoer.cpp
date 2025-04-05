@@ -181,7 +181,6 @@ int main(int argc, char *argv[]) {
     } else {
         encrypt(input_file, output_file, key);  // Encrypt
     }
-
-    // Should've added the -h flag to show the help menu (maybe do it later)
+    
     return 0;
 }
