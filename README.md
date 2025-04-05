@@ -7,7 +7,7 @@ This is a Command-Line Interface (CLI) tool for encrypting and decrypting files 
 
 - **File Encryption**: Encrypts a file with a user-provided password. The password is hashed using SHA-256 and XORed with the file's data.
 - **File Decryption**: Decrypts a previously encrypted file using the same password. The tool verifies file integrity by checking the hash stored in the file.
-- -   **Integrity Verification**: The integrity of the encrypted or decrypted file is verified using SHA-256 hashing. Any tampering or incorrect password results in a failure to decrypt.
+- **Integrity Verification**: The integrity of the encrypted or decrypted file is verified using SHA-256 hashing. Any tampering or incorrect password results in a failure to decrypt.
     
 -   **Automatic Output File Naming**: If no output file is provided, the tool automatically generates an output filename based on the input file name.
     
