@@ -64,7 +64,7 @@ Get the xoer code on your local machine:
 
 To compile the tool, you can use the following command:
 
-`λ g++ .\xoer.cpp -o xoer -lssl -lcrypto`
+`λ g++ xoer.cpp -o xoer -lssl -lcrypto`
 
 ## Security Note
 
