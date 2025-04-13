@@ -21,21 +21,21 @@ This is a Command-Line Interface (CLI) tool for encrypting and decrypting files 
 To see the help message please type:
 
 
-`λ .\xoer -h` 
+`λ xoer -h` 
 
 ### Encrypt a file:
 
 secret.txt
 
 
-`λ .\xoer encrypt -i secret.txt -o more-secure-secret.txt` 
+`λ xoer encrypt -i secret.txt -o more-secure-secret.txt` 
 
 ### Decrypt a file:
 
 more-secure-secret.txt
 
 
-`λ .\xoer decrypt -i more-secure-secret.txt -o secret.txt` 
+`λ xoer decrypt -i more-secure-secret.txt -o secret.txt` 
 
 ### Arguments:
 
@@ -65,6 +65,10 @@ Get the xoer code on your local machine:
 To compile the tool, you can use the following command:
 
 `λ g++ xoer.cpp -o xoer -lssl -lcrypto`
+
+Or, you could just make the build file using:
+
+`λ make`
 
 ## Security Note
 
