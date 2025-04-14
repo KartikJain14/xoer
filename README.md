@@ -84,6 +84,8 @@ Also, this tool isn't following the best standards which casues it to show your 
 
 4. Add Tests.
 
+5. Add keyfile type system (gpg type system).
+
 ## Community:
 
 To **contribute** on this project, please make pull request with concise descriptions.
